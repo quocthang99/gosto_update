@@ -13,7 +13,7 @@ a{
 .content-topbar{
     font-size: 13px;
     .flex;
-    padding: 20px 0;
+    padding: 12px 0;
     @media(min-width: 576px)and(max-width: 991px){
         justify-content: center;
     }
@@ -82,7 +82,7 @@ a{
             }
         }
     }
-    padding: 50px 0;
+    padding: 26px 0;
     align-items: center;
     .top-search-not-dropdown{
         .flex;
@@ -238,7 +238,9 @@ a{
     border-top: 1px solid #e7eaef;
     .content-center-menu{
         .flex;
-        padding: 25px 0;
+        padding: 13px 0;
+        position: relative;
+        align-items: center;
         @media(min-width: 320px)and(max-width: 1199px){
             display: none;
         }
@@ -354,16 +356,22 @@ a{
             }
         }      
     }
+    
     .hidden-sticky{
         flex: 1;
+        .menu>li:hover .submenu{
+            visibility: visible;
+            transform: translateY(0);
+            opacity: 1;
+        }
         .menu{
             gap: 50px;
             .flex;
             .list-menu{
                 .flex;
-		align-items: center;
-		color: @white;
-        position: static;
+                align-items: center;
+                color: @white;
+                position: static;
                 a{
                     font-size: 14px;
                     text-transform: uppercase;
@@ -372,6 +380,11 @@ a{
                 }
                 a:hover{
                     color: #95ae00;
+                    
+                    
+                }
+                span{
+                    color: #09432b;
                 }
                 .submenu{
                     display: flex;
@@ -384,7 +397,7 @@ a{
                     position: absolute;
                     opacity: 0;
                     z-index: 3;
-                    top: calc(100% + 13px);
+                    top: calc(100% + 0px);
                     transition: 0.3s;
                     webkit-box-shadow: 800px;
                     -webkit-box-shadow: 800px 0 #fff, -800 0 #fff;
@@ -413,7 +426,7 @@ a{
                             }
                             position: static;
                             a:hover{
-                                color: @hover;
+                                color: #95ae00;
                             }
                         }
                     }
@@ -435,13 +448,13 @@ a{
     .header-static-text{
         p{
             color: @active;
-            font-weight: 500;
+            font-weight: 400;
         }
     }
 }
 .img-content-slide{
     position: relative;
-    margin-bottom: 53px;
+    margin-bottom: 55px;
     .content-banner{
         position: absolute;
         top: 0;
@@ -527,7 +540,7 @@ a{
     }
 }
 .page-main{
-    margin-bottom: 53px;
+    margin-bottom: 52px;
 }
 .section-full-main{
     background: #f3f6f1;
@@ -696,7 +709,7 @@ a{
         cursor: pointer;
         position: relative;
         background: #fff;
-        padding-bottom: 20px;
+        padding-bottom: 26px;
         border-radius: 15px;
         .product-label{
             position: absolute;
@@ -707,16 +720,18 @@ a{
             padding: 20px;
             .value{
                 background: #5aab19;
-                padding: 1px 6px;
+                padding: 2px 6px;
                 color: #fff;
                 border-radius: 3px;
+                font-size: 14px;
             }
             .hot{
                 background: #fe3638;
-                padding: 1px 12px;
+                padding: 2px 12px;
                 color: #fff;
                 border-radius: 3px;
                 margin-left: 1px;
+                font-size: 14px;
             }
         }
         .content-product{
@@ -807,6 +822,7 @@ a{
                     display: block;
                     text-align: center;
                     padding: 10px 5px;
+                    font-size: 13px;
                 }   
                 @media(min-width: 320px)and(max-width: 1199px){
                     display: none;
@@ -826,7 +842,7 @@ a{
                 align-items: center;
                 // flex-direction: column;
                 opacity: 0;
-                gap: 15px;
+                gap: 2px;
                 .action{
                     width: 2.5rem;
                     height: 1.5rem;
@@ -974,6 +990,26 @@ a{
     gap: 20px;
     .items{
         position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        .img-banner{
+            height: 100%;
+            img{
+                height: 100%;
+                object-fit:cover;
+            }
+        }
+        .img-banner::before{
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background-color: red;
+            z-index: 2;
+        }
         .content{
             position: absolute;
             top: 0;
@@ -991,14 +1027,18 @@ a{
                 font-size: 14px;
                 text-transform: uppercase;
                 margin-bottom: 20px;
+                cursor: pointer;
                 @media(min-width: 576px)and(max-width: 991px){
                     margin-bottom: 10px;
                 }
             }
-            
+            h5:hover{
+                color: #ffd800;
+            }
             h2{
                 font-size: 24px;
                 margin-bottom: 26px;
+                font-weight: 500;
                 @media(min-width: 576px)and(max-width: 991px){
                     margin-bottom: 12px;
                 }
@@ -1008,6 +1048,7 @@ a{
             }
         }
     }
+    
     @media(min-width: 320px)and(max-width: 991px){
         .items3{
             display: none;
@@ -1018,7 +1059,12 @@ a{
     }
    
 }
-
+.img-content-banner .items:hover  a img{
+    transform: scale(1.1);
+}
+.img-content-banner .items img{
+    transition: all .4s;
+} 
 .selling-products{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -1058,16 +1104,18 @@ a{
             right: 0;
             .value{
                 background: #5aab19;
-                padding: 1px 6px;
+                padding: 2px 6px;
                 color: #fff;
                 border-radius: 3px;
+                font-size: 14px;
             }
             .hot{
                 background: #fe3638;
-                padding: 1px 12px;
+                padding: 2px 12px;
                 color: #fff;
                 border-radius: 3px;
                 margin-left: 1px;
+                font-size: 14px;
             }
         }
         .content{
@@ -1470,6 +1518,7 @@ footer{
                                 display: flex;
                                 flex-direction: column;
                                 margin-left: 10px;
+                                padding-top: 10px;
                                 .call{
                                     font-size: 14px;
                                     color: #9ea4b4;
@@ -1522,7 +1571,7 @@ footer{
             p{
                 font-size: 14px;
                 color: #9ea4b4;
-                line-height: 2;
+                line-height: 1.3;
                 margin-bottom: 14px
             }
             .download-app{

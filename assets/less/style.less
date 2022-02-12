@@ -570,6 +570,15 @@ a{
             display: flex;
             gap: 8px;
             align-items: center;
+            @media(min-width: 768px)and(max-width: 1399px){
+                bottom: 20px;
+            }
+            @media(min-width: 576px)and(max-width: 767px){
+                bottom: 30px;
+            }
+            @media(min-width: 320px)and(max-width: 575px){
+                bottom: 20px;
+            }
             .name{
                 font-size: 14px;
                 color: #09432b;
@@ -578,26 +587,6 @@ a{
             .qty-items{
                 font-size: 13px;
                 color: #707b91;
-            }
-        }
-        @media(min-width: 992px)and(max-width: 1199px){
-            .img-thumb{
-                margin-bottom: 10px;
-            }
-        }
-        @media(min-width: 768px)and(max-width: 991px){
-            .img-thumb{
-                margin-bottom: 20px;
-            }
-        }
-        @media(min-width: 576px)and(max-width: 767px){
-            .img-thumb{
-                margin-bottom: 16px;
-            }
-        }
-        @media(min-width: 388px)and(max-width: 468px){
-            .img-thumb{
-                margin-bottom: 16px;
             }
         }
     }
@@ -736,14 +725,14 @@ a{
             padding: 20px;
             .value{
                 background: #5aab19;
-                padding: 2px 6px;
+                padding: 1px 8px;
                 color: #fff;
                 border-radius: 3px;
                 font-size: 14px;
             }
             .hot{
                 background: #fe3638;
-                padding: 2px 12px;
+                padding: 1px 14px;
                 color: #fff;
                 border-radius: 3px;
                 margin-left: 1px;
@@ -1136,14 +1125,14 @@ a{
             right: 0;
             .value{
                 background: #5aab19;
-                padding: 2px 6px;
+                padding: 1px 8px;
                 color: #fff;
                 border-radius: 3px;
                 font-size: 14px;
             }
             .hot{
                 background: #fe3638;
-                padding: 2px 12px;
+                padding: 1px 14px;
                 color: #fff;
                 border-radius: 3px;
                 margin-left: 1px;
